@@ -8,14 +8,12 @@ import "./cadastro.css"
 const userService = new UserService()
 
 const Cadastro = () => {
-    const [loading, setLoading] = useState()
     const [form, setForm] = useState([])
     const navigate = useNavigate()
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            setLoading(true)
             const { data } = await userService.cadastrar({
                 nome: form.nome,
                 email: form.email,
@@ -31,7 +29,6 @@ const Cadastro = () => {
                     navigate('/home')
                 }
             }
-            setLoading(false)
         }
         catch (err) {
             alert('Algo deu errado com o Cadastro' + err)
@@ -68,7 +65,6 @@ const Cadastro = () => {
                     type='submit'
                     text='Efetuar Cadastro!'
                     onClick={handleSubmit}
-                    disabled={loading === true}
                 />
                 <div className='SubContainerSign'>
                     <p>Já possui conta?</p>
