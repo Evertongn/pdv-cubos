@@ -11,4 +11,4 @@ const knex = require('knex')({
 })
 
 
-module.exports = knexuser
+module.exports = knex
