@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class UserServices {
     constructor() {
         this.axios = axios.create({
-            baseURL: "http://localhost:3000"
+            baseURL: "https://pdv-cubos-d1ws.vercel.app/"
         })
     }
 
