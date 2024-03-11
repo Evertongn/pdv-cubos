@@ -1,0 +1,115 @@
+/* Estilos para o modal */
+
+.modalUsuario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 15px;
+    width: 35vw;
+    height: 65vh;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, .06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 3rem;
+        gap: 1rem;
+        border-radius: 15px;
+        max-width: 400px;
+        box-shadow: 0 4px 10px rgba(32, 32, 32, .06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+            color: black;
+            font-size: 20px;
+            font-weight: light;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        a {
+            color: white;
+            font-size: 14px;
+        }
+
+    }
+
+}
+
+.flex {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ContainerUsuario {
+    margin: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    width: 65%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 2%;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, .06);
+}
+
+.borda {
+    border-top: 1px solid #f2f4f7;
+    margin-top: 1rem;
+
+}
+
+.dados {
+    display: flex;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, .06);
+}
+
+.inicio {
+    justify-content: flex-start;
+
+    h4 {
+        font-family: Montserrat, Verdana, sans-serif;
+        line-height: 150%;
+    }
+}
+
+
+.fim {
+    justify-content: flex-end;
+
+    p {
+        margin-left: 8px;
+        text-align: right;
+        color: #2b2d30;
+        font-size: 1.2rem
+    }
+}

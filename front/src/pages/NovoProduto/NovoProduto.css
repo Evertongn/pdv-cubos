@@ -1,0 +1,82 @@
+/* ProductAdd.css */
+.product-add {
+    margin: 20% auto;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    width: 65%;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    margin-top: 2%;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, 0.1);
+}
+
+.product-add h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.product-add input {
+    display: flex;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #212121;
+    font-size: 1rem;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(32, 32, 32, 0.06);
+}
+
+input::placeholder {
+    position: relative;
+    left: 1%;
+    color: #757575;
+}
+
+.product-add input:focus {
+    outline: none;
+    box-shadow: 0 0 4px #4CAF50;
+}
+
+.produto_add_actions {
+    margin: 1rem auto;
+    gap: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto_add_actions a,
+.produto_add_actions button {
+    width: 15rem;
+    text-decoration: none;
+    border: none;
+    background-color: #fff;
+    color: #222;
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.produto_add_actions a:hover,
+.produto_add_actions button:hover {
+    background-color: #222;
+    color: #ffbb33;
+}

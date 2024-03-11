@@ -1,0 +1,60 @@
+.listaPedidos {
+    border-top: 1px solid #f2f4f7;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 1rem;
+    row-gap: 0.5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, 0.06);
+}
+
+.listaPedidos h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.listaPedidos p {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.containerPedidos {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-top: 0.5rem;
+}
+
+.containerPedidos::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #f5f5f5;
+}
+
+.containerPedidos::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 0.25rem;
+}
+
+.containerPedidos .pedido-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.containerPedidos .pedido-item:not(:last-child) {
+    margin-bottom: 0.2rem;
+}
+
+.containerPedidos .pedido-item span {
+    font-weight: 600;
+    color: #333;
+}

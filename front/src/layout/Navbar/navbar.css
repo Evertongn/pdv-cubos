@@ -1,0 +1,48 @@
+.ContainerNav {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    start {
+        justify-content: flex-start;
+    }
+
+    column {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    min-height {
+        min-height: 75%;
+    }
+}
+
+
+
+.stylesNav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 1em;
+
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    li {
+        margin-right: 1em;
+    }
+
+    li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: #ffbb33;
+    }
+}

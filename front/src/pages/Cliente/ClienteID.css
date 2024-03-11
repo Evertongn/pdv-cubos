@@ -1,0 +1,58 @@
+.produtoID {
+    border-top: 1px solid #f2f4f7;
+    display: flex;
+    padding: 0.8rem;
+    margin-top: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    /* Corrigido para "center" */
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, 0.06);
+    /* Corrigido para 0.06 */
+}
+
+.Containerid {
+    margin: auto;
+    margin-top: 2.5rem;
+    /* Corrigido para 2rem */
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    width: 65%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(32, 32, 32, 0.06);
+    /* Corrigido para 0.06 */
+
+    h2 {
+        font-family: Montserrat, Verdana, sans-serif;
+        line-height: 150%;
+        background-color: #f2f4f7;
+        /* Adicionado para melhorar a legibilidade do título */
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+}
+
+.formID {
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 100%;
+    gap: 20px;
+
+    input {
+        color: black;
+        background-color: #f2f4f7;
+        /* Adicionado para melhorar a legibilidade do campo de entrada */
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+        width: 100%;
+    }
+}

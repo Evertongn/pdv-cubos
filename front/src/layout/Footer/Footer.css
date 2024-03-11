@@ -1,0 +1,39 @@
+.FooterStyle {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #222;
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    ul li {
+        margin: 0 0.8em;
+    }
+
+    ul li:hover {
+        color: #ffbb33;
+    }
+
+    ul svg {
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    p {
+        margin-top: 1em;
+    }
+
+    p span {
+        font-weight: bold;
+        color: #ffbb33;
+    }
+
+}
