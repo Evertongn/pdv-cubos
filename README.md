@@ -12,7 +12,7 @@ Front-end: React.js 💻
 Back-end: Node.js, Express.js 💻
 
 
-##     Funcionalidades
+##     Funcionalidades 🔨
 
 - Usuário: Cadastro, login, atualizaçãode dados de usuário 👤.
 - Produto: Cadastro, atualização, listagem e exclusão de produtos 📊.
