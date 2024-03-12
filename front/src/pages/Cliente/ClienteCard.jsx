@@ -13,7 +13,7 @@ function ClienteCard({ id, nome, cpf, email }) {
     }
 
     return (
-        <div className='listaProdutos'>
+        <div className='listaClientes'>
             <h4>{nome}</h4>
             <p>
                 <span>email:</span> {email}

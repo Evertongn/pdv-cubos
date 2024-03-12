@@ -1,21 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './NovoProduto.css';
-
-
 import { BsArrowLeft } from "react-icons/bs"
 import { useNavigate, Link } from 'react-router-dom'
 import UserService from '../../Services/UserService'
+
+import Select from '../../Components/select/select';
 
 const NovoCliente = () => {
     const userService = new UserService()
     const navigate = useNavigate()
 
+    const [categorias, setCategorias] = useState([])
     const [form, setForm] = useState({
         descricao: '',
         quantidade_estoque: '',
         valor: '',
         categoria_id: '',
     })
+
+    useEffect(() => {
+
+        const fetchCategorias = async () => {
+            try {
+                const response = await userService.categorias();
+                setCategorias(response);
+            } catch (error) {
+                console.error('Erro ao carregar categorias:', error);
+            }
+        };
+
+        fetchCategorias();
+    }, [])
+
 
     const handleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -35,10 +51,19 @@ const NovoCliente = () => {
                 navigate('/produto');
             }
         } catch (error) {
-            console.error('Erro ao cadastrar produto:', error);
             alert('Ocorreu um erro ao cadastrar o produto, por favor tente novamente.');
         }
     };
+
+    function handleCategory(e) {
+        setForm({
+            ...form,
+            categoria_id: {
+                id: e.target.value,
+                name: e.target.options[e.target.selectedIndex].text,
+            },
+        })
+    }
 
     return (
 
@@ -53,21 +78,21 @@ const NovoCliente = () => {
                     onChange={handleChange}
                 />
                 <input
-                    type="text"
+                    type="number"
                     name="valor"
                     placeholder="Valor"
                     value={form.valor}
                     onChange={handleChange}
                 />
-                <input
-                    type="text"
+                <Select
                     name="categoria_id"
-                    placeholder="Categoria"
-                    value={form.categoria_id}
-                    onChange={handleChange}
+                    text="Selecione a categoria"
+                    options={categorias}
+                    handleOnChange={handleCategory}
+                    value={form.categoria_id ? form.categoria_id.id : ''}
                 />
                 <input
-                    type="text"
+                    type="number"
                     name="quantidade_estoque"
                     placeholder="Quantidade"
                     value={form.quantidade_estoque}
@@ -76,7 +101,7 @@ const NovoCliente = () => {
                 <div className='produto_add_actions'>
                     <button type="submit" >Adicionar Produto</button>
                     <Link to={'/produto'} >
-                        <BsArrowLeft /> voltar
+                        <BsArrowLeft /> Voltar
                     </Link>
                 </div>
             </form>

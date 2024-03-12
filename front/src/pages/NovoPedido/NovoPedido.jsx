@@ -58,7 +58,6 @@ const NovoPedido = () => {
                 navigate('/pedido');
             }
         } catch (error) {
-            console.error('Erro ao cadastrar Pedido:', error);
             alert('Ocorreu um erro ao cadastrar o Pedido, por favor tente novamente.');
         }
     };

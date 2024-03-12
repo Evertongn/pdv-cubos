@@ -30,7 +30,7 @@ const ClienteID = () => {
                 navigate('/cliente');
             }
         } catch (error) {
-            console.error('Erro ao carregar produtos:', error);
+            console.error('Erro ao cadastradar cliente:', error);
         }
     };
 
@@ -40,7 +40,7 @@ const ClienteID = () => {
 
     return (
         <div className="Containerid">
-            <div className='produtoID'>
+            <div className='clienteID'>
                 <h2>Edite o Cliente ✏️</h2>
                 <div className='formID'>
                     <Input

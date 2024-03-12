@@ -21,7 +21,7 @@ function Pedido() {
                 const response = await userService.pedidos();
                 setPedidos(response);
             } catch (error) {
-                console.error('Erro ao carregar produtos:', error);
+                console.error('Erro ao carregar Pedido:', error);
             }
         };
 

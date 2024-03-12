@@ -46,7 +46,6 @@ function Produto() {
                 setProdutos(updatedProdutos);
             }
         } catch (error) {
-            console.error('Erro ao Excluir produto:', error);
             alert('Ocorreu um erro ao Excluir o produto, por favor tente novamente.');
         }
     }

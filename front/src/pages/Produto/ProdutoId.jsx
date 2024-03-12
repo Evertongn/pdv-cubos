@@ -15,7 +15,6 @@ const userService = new UserService()
 const ProdutoId = () => {
 
     const { id } = useParams()
-    const token = localStorage.getItem('token')
     const [form, setForm] = useState([])
     const navigate = useNavigate()
 

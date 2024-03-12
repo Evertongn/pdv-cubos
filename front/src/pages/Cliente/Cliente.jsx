@@ -38,7 +38,7 @@ function Produto() {
     );
 
     return (
-        <div className="ContainerProduto">
+        <div className="containerCliente">
             <div className="pesquisa">
                 <BsSearch className="search-icon" />
                 <input

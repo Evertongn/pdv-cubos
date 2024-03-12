@@ -1,0 +1,39 @@
+.select_control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    label {
+        margin-top: 0.6em;
+        margin-bottom: .6em;
+        font-weight: bold;
+    }
+
+    select {
+        display: flex;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color: #212121;
+        font-size: 1rem;
+        border-radius: 15px;
+        border: 1px solid #e0e0e0;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(32, 32, 32, 0.06);
+
+        select::placeholder {
+            position: relative;
+            left: 1%;
+            color: #757575;
+        }
+
+        select:focus {
+            outline: none;
+            box-shadow: 0 0 4px #4CAF50;
+        }
+    }
+
+}

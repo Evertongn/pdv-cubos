@@ -10,7 +10,7 @@ function Footer() {
                 <li><FaInstagram /></li>
                 <li><FaLinkedin /></li>
             </ul>
-            <p><span>Costs</span> &copy;2024</p>
+            <p><span>PDV-Cubos</span> &copy;2024</p>
         </footer>)
 }
 

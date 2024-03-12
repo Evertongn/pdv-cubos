@@ -8,7 +8,6 @@ const userService = new UserService()
 import "./login.css"
 
 const Login = () => {
-  const [loading, setLoading] = useState()
 
   const [form, setForm] = useState([])
 
@@ -17,14 +16,11 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      setLoading(true)
       const response = await userService.login(form)
-      console.log('response do Login', response)
       if (response === true) {
         alert('usuário Logado com Sucesso')
         navigate('/home')
       }
-      setLoading(false)
     }
     catch (err) {
       alert('Algo deu errado com o Login' + err)

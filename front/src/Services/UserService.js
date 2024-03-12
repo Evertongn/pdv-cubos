@@ -33,6 +33,17 @@ export default class UserServices {
         });
     }
 
+    async categorias() {
+        try {
+            const response = await this.axios.get('/categoria')
+
+            return response.data;
+        } catch (error) {
+            console.error('Erro ao obter categorias:', error);
+            throw error;
+        }
+    }
+
     async cadastrarProdutos(dados) {
         const token = localStorage.getItem('token')
         try {

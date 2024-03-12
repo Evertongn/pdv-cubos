@@ -27,8 +27,7 @@ const NovoCliente = () => {
                 navigate('/cliente');
             }
         } catch (error) {
-            console.error('Erro ao cadastrar Cliente:', error);
-            alert('Ocorreu um erro ao cadastrar o produto, por favor tente novamente.');
+            alert('Ocorreu um erro ao cadastrar o Cliente, por favor tente novamente.');
         }
     };
     return (
