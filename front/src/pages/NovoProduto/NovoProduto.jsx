@@ -11,6 +11,10 @@ const NovoCliente = () => {
     const navigate = useNavigate()
 
     const [categorias, setCategorias] = useState([])
+    const [cat, setCat] = useState({
+        id: '',
+        name: ''
+    })
     const [form, setForm] = useState({
         descricao: '',
         quantidade_estoque: '',
@@ -56,14 +60,20 @@ const NovoCliente = () => {
     };
 
     function handleCategory(e) {
+        const selectedId = e.target.value;
+        const selectedName = e.target.options[e.target.selectedIndex].text;
+
+        setCat({
+            id: selectedId,
+            name: selectedName
+        });
+
         setForm({
             ...form,
-            categoria_id: {
-                id: e.target.value,
-                name: e.target.options[e.target.selectedIndex].text,
-            },
-        })
+            categoria_id: selectedId
+        });
     }
+
 
     return (
 
@@ -89,7 +99,7 @@ const NovoCliente = () => {
                     text="Selecione a categoria"
                     options={categorias}
                     handleOnChange={handleCategory}
-                    value={form.categoria_id ? form.categoria_id.id : ''}
+                    value={cat ? cat.id : ''}
                 />
                 <input
                     type="number"

@@ -32,7 +32,7 @@ function ProjectCard({ id, descricao, valor, categoria_id, quantidade_estoque, h
         <div className='listaProdutos'>
             <h4>{descricao}</h4>
             <p>
-                <span>Valor:</span> R${valor}
+                <span>Valor:</span> R$ {valor}
             </p>
             <p>
                 <span>Categoria:</span> {categoria_id}
