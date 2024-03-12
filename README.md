@@ -55,5 +55,5 @@ Repita o processo para o backend:
 
 ## Feedback
 
-Se você tiver algum feedback, por favor, nos avise através do LinkedIn [Everton gomes](https://www.linkedin.com/in/everton-gomes-n/) 💌.
+Se você tiver algum feedback, por favor, avise através do LinkedIn [Everton gomes](https://www.linkedin.com/in/everton-gomes-n/) 💌.
 
