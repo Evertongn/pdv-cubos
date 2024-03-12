@@ -7,7 +7,7 @@ const listarCategorias = async (req, res) => {
             res.status(200).json(categorias)
         )
     } catch (error) {
-        return res.status(400).json({ mensagem: error.mensagem })
+        return res.status(500).json({ mensagem: error.mensagem })
     }
 }
 

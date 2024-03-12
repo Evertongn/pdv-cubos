@@ -10,7 +10,7 @@ const cadastrarUsuario = async (req, res) => {
         const emailExiste = await knex("usuarios").where({ email }).first()
 
         if (emailExiste) {
-            return res.status(400).json({
+            return res.status(409).json({
                 mensagem:
                     'O e-mail informado já está sendo utilizado por outro usuário.'
             })
@@ -27,10 +27,10 @@ const cadastrarUsuario = async (req, res) => {
         const { senha: _, ...usuarioSemsenha } = novoUsuario[0]
 
 
-        return res.status(201).json(usuarioSemsenha);
+        return res.status(200).json(usuarioSemsenha);
 
     } catch (error) {
-        return res.status(400).json({ mensagem: error.mensagem })
+        return res.status(500).json({ mensagem: error.mensagem })
     }
 }
 
@@ -47,7 +47,7 @@ const login = async (req, res) => {
         const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
 
         if (!senhaCorreta) {
-            return res.status(400).json({ mensagem: 'Email ou senha não confere' });
+            return res.status(401).json({ mensagem: 'Email ou senha não confere' });
         }
 
         const token = jwt.sign({ id: usuario.id }, senhaJwt, { expiresIn: '8h' });
@@ -56,7 +56,7 @@ const login = async (req, res) => {
 
         return res.status(200).json({ usuario: usuarioLogado, token });
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message });
+        return res.status(500).json({ mensagem: error.message });
     }
 };
 
@@ -76,7 +76,7 @@ const editarUsuario = async (req, res) => {
         const usuario = await knex('usuarios').where({ email }).first()
 
         if (usuario && usuario.id != id) {
-            return res.status(400).json({
+            return res.status(409).json({
                 mensagem:
                     'O e-mail informado já está sendo utilizado por outro usuário.'
             })
@@ -85,9 +85,9 @@ const editarUsuario = async (req, res) => {
         const hash = await bcrypt.hash(senha, 10);
         await knex('usuarios').update({ nome, email, senha: hash }).where('id', id)
 
-        return res.status(204).json("Usuario atualizado");
+        return res.status(200).json("Usuario atualizado");
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message });
+        return res.status(500).json({ mensagem: error.message });
     }
 }
 

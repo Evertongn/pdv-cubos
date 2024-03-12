@@ -7,7 +7,7 @@ const cadastroCliente = async (req, res) => {
         const emailExistente = await knex('clientes').where({ email }).first();
 
         if (emailExistente) {
-            return res.status(400).json({
+            return res.status(409).json({
                 mensagem:
                     'O e-mail informado já está sendo utilizado por outro cliente.',
             });
@@ -15,7 +15,7 @@ const cadastroCliente = async (req, res) => {
         const cpfExistente = await knex('clientes').where({ cpf }).first();
 
         if (cpfExistente) {
-            return res.status(400).json({
+            return res.status(409).json({
                 mensagem:
                     'O cpf informado já está sendo utilizado por outro cliente.',
             });
@@ -42,7 +42,7 @@ const atualizarCliente = async (req, res) => {
         const emailExistente = await knex('clientes').where({ email }).first();
 
         if (emailExistente && emailExistente.id != id) {
-            return res.status(400).json({
+            return res.status(409).json({
                 mensagem:
                     'O e-mail informado já está sendo utilizado por outro cliente.',
             });
@@ -56,10 +56,10 @@ const atualizarCliente = async (req, res) => {
             });
         }
         const [clienteAtualizado] = await knex('clientes').update(dados).where({ id }).returning('*')
-        return res.status(204).json(clienteAtualizado);
+        return res.status(200).json(clienteAtualizado);
 
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message })
+        return res.status(500).json({ mensagem: error.message })
     }
 
 }
@@ -69,7 +69,7 @@ const listarClientes = async (req, res) => {
         const clientes = await knex("clientes")
         return res.status(200).json(clientes)
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message })
+        return res.status(500).json({ mensagem: error.message })
     }
 }
 
@@ -85,7 +85,7 @@ const detalharCliente = async (req, res) => {
 
         return res.status(200).json(detalharCliente)
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message })
+        return res.status(500).json({ mensagem: error.message })
     }
 }
 

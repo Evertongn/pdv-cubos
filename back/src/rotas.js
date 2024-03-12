@@ -1,10 +1,13 @@
+//feramentas
+const autenticacao = require("./intermediarios/autenticacao")
 const express = require("express")
-
 const rotas = express.Router()
 
-const listarCategorias = require("./controladores/categorias")
+//Usuario
 const { cadastrarUsuario, login, detalharUsuario, editarUsuario } = require('./controladores/usuario')
-const autenticacao = require("./intermediarios/autenticacao")
+
+//Categoria
+const listarCategorias = require("./controladores/categorias")
 
 //produtos
 const { cadastroProduto, atualizarProduto, listarProdutos, detalharProduto, excluirProduto } = require('./controladores/produto')
@@ -25,6 +28,8 @@ const schemaPedido = require('./Validacoes/squemaPedido')
 //joi
 const validarCorpoRequisicao = require('./intermediarios/validarCorpo');
 
+
+//rotas Login
 rotas.post('/usuario', validarCorpoRequisicao(schemaUsuario), cadastrarUsuario)
 rotas.post('/login', validarCorpoRequisicao(schemaLoginUsuario), login)
 rotas.get('/categoria', listarCategorias)

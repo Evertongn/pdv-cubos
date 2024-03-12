@@ -18,19 +18,19 @@ const cadastroPedido = async (req, res) => {
         const clienteValido = await knex('clientes').where({ id: numeroClienteId }).first();
 
         if (!clienteValido) {
-            return res.status(400).json({ mensagem: 'Necessário um cliente válido para cadastrar um pedido' });
+            return res.status(404).json({ mensagem: 'Necessário um cliente válido para cadastrar um pedido' });
         };
 
         const resultadoValidacao = await validadorProduto(pedidoProdutosNumericos)
 
         if (!resultadoValidacao.validador) {
-            return res.status(400).json(resultadoValidacao.mensagem)
+            return res.status(403).json(resultadoValidacao.mensagem)
         }
 
         const valorTotalPedido = await totalPedido(pedidoProdutosNumericos);
 
         if (!valorTotalPedido.validador) {
-            return res.status(400).json(valorTotalPedido.mensagem)
+            return res.status(403).json(valorTotalPedido.mensagem)
         }
         const pedido = {
             cliente_id: numeroClienteId,
@@ -44,18 +44,18 @@ const cadastroPedido = async (req, res) => {
         const pedidoProduto = await cadastraPedidoProduto(pedidoId, pedidoProdutosNumericos);
 
         if (!pedidoProduto.validador) {
-            return res.status(400).json(pedidoProduto.mensagem)
+            return res.status(403).json(pedidoProduto.mensagem)
         }
 
         const estoque = await ajustaEstoque(pedidoProdutosNumericos);
 
         if (!estoque.validador) {
-            return res.status(400).json(estoque.mensagem)
+            return res.status(403).json(estoque.mensagem)
         }
 
         return res.status(200).json({ mensagem: 'Pedido cadastrado com sucesso' })
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message })
+        return res.status(500).json({ mensagem: error.message })
     }
 }
 
@@ -66,7 +66,7 @@ const listarPedido = async (req, res) => {
             const clienteValido = await knex('clientes').where({ id: cliente_id }).first();
 
             if (!clienteValido) {
-                return res.status(400).json({ mensagem: 'Necessário um cliente válido para listar um pedido' });
+                return res.status(404).json({ mensagem: 'Necessário um cliente válido para listar um pedido' });
             }
         }
 
@@ -107,7 +107,7 @@ const listarPedido = async (req, res) => {
 
         return res.status(200).json(pedidosComProdutos);
     } catch (error) {
-        return res.status(400).json(error.message);
+        return res.status(500).json(error.message);
     }
 };
 

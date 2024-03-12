@@ -9,7 +9,7 @@ const autenticacao = async (req, res, next) => {
     const bearerToken = req.headers.authorization;
 
     if (!bearerToken) {
-        return res.status(404).json({ mensagem: 'Autenticação Não encontrada' });
+        return res.status(401).json({ mensagem: 'Autenticação Não encontrada' });
     }
 
     const token = bearerToken.replace('Bearer ', '').trim();
@@ -27,7 +27,7 @@ const autenticacao = async (req, res, next) => {
         req.usuario = usuario
         next()
     } catch (error) {
-        return res.status(400).json({ mensagem: error.message });
+        return res.status(500).json({ mensagem: error.message });
     }
 }
 
